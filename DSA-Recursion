@@ -1,0 +1,92 @@
+1. Counting Sheep
+const sheepsJumped = function(count) {
+ if(count == 0) {
+    console.log("All sheeps jumped over the fence");
+ }
+ else {
+    console.log(`${count}:Another sheep jumps over the fence`);
+    sheepsJumped(count-1);
+ }
+ }
+ ************************
+ let count = 3;
+ sheepsJumped(count);
+ ************************
+ 
+2. Power Calculator
+ var exponent = function(a, n) 
+{
+   if (n === 0) 
+   {
+    return 1;
+    }
+  else 
+  { 
+    console.log(`${a} * exponent(${a},${n-1})`);
+    return a * exponent(a, n-1);
+  }
+};
+
+console.log(exponent(2, 3));
+
+ ******************************************
+ Input : powerCalculator(2,3)
+ Output : 2 * powerCalculator(2,2)
+          2 * 2 * powerCalculator(2,1)
+          2 * 2 * 2 * powerCalculator(2,0)
+          2 * 2 * 2 * 1
+ ******************************************
+ 
+3. Reverse a String
+function reverseString(str) {
+  if (str === "") // This is the terminal case that will end the recursion
+    return "";
+  
+  else {
+    console.log()
+    return reverseString(str.substr(1)) + str.charAt(0);
+  }
+}   
+
+ ******************************************
+ Input : Hello
+ Output : 
+ reverseString("ello") + "H"
+reverseString("llo")  + "e" 
+reverseString("lo")   + "l"
+reverseString("o")  + "l"
+reverseString("")  + "o"
+olleH
+ ******************************************
+ 
+ 4. nth triangular number
+
+function tri(n){
+  if(n <= 1){
+    return n
+  } else {
+    return n + tri(n-1)
+  }
+}
+  
+ ******************************************
+ Input : tri(6)
+ Output : 5 + tri(4)
+          5 + 4 + tri(3)
+          5 + 4 + 3 + 2 + tri(1)
+          5 + 4 + 3 + 2 + 1 + tri(0)
+          15
+ ******************************************
+ 
+ 
+ 
+ 12. Binary Representation
+
+const decimalToBinary = num => num === 0 ? 0 : num % 2 + 10 * decimalToBinary(Math.floor(num / 2));
+ ******************************************
+ Input :  console.log(decimalToBinary(17));
+ Output : 10001
+ ******************************************
+ 
+ 
+ 
