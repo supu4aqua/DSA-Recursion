@@ -78,6 +78,38 @@ function tri(n){
           15
  ******************************************
  
+ 5. String Splitter
+ 
+ 	let result = [];
+function split(str, seperator) {
+
+  if(str.length == 0){
+    return "Empty String"
+  }
+  if(seperator.length == 0){
+    return "No Seperator found."
+  }
+	// if str has the separator
+    var n = str.search(seperator)
+    if(n >= 0){
+      // then push all the text before the separator into the result variable
+	// and call split where the first argument is all the text after that separator
+      result.push(str.slice(0,n))
+      split(str.slice(n+1), seperator);
+    }
+    else {
+      result.push(str);
+      return `Seperator not found in the string. Returning string - ${str}`
+    }
+  
+	// if the str doesn't have any more separators
+	 return result;
+}
+
+ ******************************************
+ Input : 02/20/2020
+ Output : ["02", "20", "2020"]
+ ******************************************
  
  
  12. Binary Representation
