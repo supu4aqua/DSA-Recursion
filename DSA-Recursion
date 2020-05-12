@@ -111,6 +111,49 @@ function split(str, seperator) {
  Output : ["02", "20", "2020"]
  ******************************************
  
+ 6. Fibonacci
+ 
+ let fibonacci = [];
+fibonacci[0] = 0;
+fibonacci[1] = 1;
+
+function findFibonacci(num) {
+  for (let i = 2; i < num; i++) {
+  // Next fibonacci number = previous + one before previous
+  fibonacci[i] = fibonacci[i - 2] + fibonacci[i - 1];
+  } 
+
+ return fibonacci;
+}
+
+******************************************
+ Input : console.log(findFibonacci(3));
+ Output : [ 0, 1, 1, 2, 3, 5, 8 ]
+ ******************************************
+ 
+
+ 7. Factorial
+ 
+ let factorial = 1;
+  function findFactorial(n){
+    if(n==1)
+      return 1
+    factorial = n * findFactorial(n-1);
+    return factorial
+  }
+
+ ******************************************
+ Input : findFactorial(5)
+ Output : 5 * findFactorial(4)
+ 	  5 * 4 * findFactorial(3)
+	  5 * 4 * 3 * findFactorial(2)
+	  5 * 4 * 3 * 2 * findFactorial(1)
+	  5 * 4 * 3 * 2 * 1
+	  120
+ ******************************************
+
+
+
  
  12. Binary Representation
 
