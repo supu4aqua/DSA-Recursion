@@ -153,6 +153,33 @@ function findFibonacci(num) {
  ******************************************
 
 
+10. Anagram
+function getAllAnagrams(string) {
+  var results = [];
+  //Return string if string is a single character
+  if (string.length === 1) {
+    results.push(string);
+    return results;
+  }
+  //Else define inner permutations
+  for (let i = 0; i < string.length; i++) {
+    var firstChar = string[i];
+    var charLeft = string.substring(0,i)+ string.substring(i+1);
+    var innerPermutations = getAllAnagrams(charLeft);
+    for(let j =0; j<innerPermutations.length; j++){
+      results.push(firstChar+innerPermutations[j]);
+    }
+  }
+  return results;
+}
+
+*************************************************************
+ Input : getAllAnagrams('east')
+ Output : [ 'east', 'eats','esat','esta','etas','etsa',
+ 		'aest','aets','aset', 'aste','ates','atse',
+ 		'seat','seta','saet','sate','stea','stae',
+		'teas','tesa','taes','tase','tsea','tsae' ]
+ ************************************************************
 
  
  12. Binary Representation
